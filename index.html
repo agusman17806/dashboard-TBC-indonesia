@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- Dashboard TBC Indonesia - Temporal Trend Analysis and Spatial Modeling -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard TBC Indonesia</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #7f8c8d;
+    font-size: 16px;
+  }
+  
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .metric-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .metric-card h3 {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .metric-card .value {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .metric-card.total .value {
+    color: #e74c3c;
+  }
+  
+  .metric-card.ols .value {
+    color: #3498db;
+  }
+  
+  .metric-card.gwr .value {
+    color: #1abc9c;
+  }
+  
+  .content-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+  
+  .chart-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 400px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .stats-placeholder {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    height: 400px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+    height: 600px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ecf0f1;
+    color: #7f8c8d;
+    font-size: 12px;
+  }
+  
+  @media (max-width: 768px) {
+    .content-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard Analisis TBC Indonesia</h1>
+    <p class="subtitle">Menganalisis tren perkembangan waktu dan pemodelan spasial (OLS & GWR) tingkat provinsi 2024.</p>
+    
+    <div class="metrics-grid">
+      <div class="metric-card total">
+        <h3>Total Kasus Nasional (2024)</h3>
+        <div class="value">839,018</div>
+      </div>
+      <div class="metric-card ols">
+        <h3>R-Squared (OLS Global)</h3>
+        <div class="value">0.631</div>
+      </div>
+      <div class="metric-card gwr">
+        <h3>Rata-rata R-Squared Lokal (GWR)</h3>
+        <div class="value">0.675</div>
+      </div>
+    </div>
+    
+    <div class="content-row">
+      <div class="card">
+        <h2>Tren Kasus TBC Bulanan (2020-2025)</h2>
+        <div class="chart-placeholder">📊 Grafik Tren Temporal</div>
+      </div>
+      <div class="card">
+        <h2>Koefisien Regresi OLS Global</h2>
+        <div class="stats-placeholder">📈 Statistik Model</div>
+      </div>
+    </div>
+    
+    <div class="card full-width">
+      <h2>Peta Spasial: R-Squared Lokal GWR (Tingkat Provinsi)</h2>
+      <div class="chart-placeholder">🗺️ Visualisasi Peta Interaktif</div>
+    </div>
+    
+    <div class="footer">
+      <p>Dashboard TBC Indonesia 2024 | Data Analysis: OLS & GWR Modeling | Created with Plotly & Mapbox</p>
+      <p>Repository: <a href="https://github.com/agusman17806/dashboard-TBC-indonesia" style="color: #3498db;">github.com/agusman17806/dashboard-TBC-indonesia</a></p>
+    </div>
+  </div>
+</body>
+</html>
